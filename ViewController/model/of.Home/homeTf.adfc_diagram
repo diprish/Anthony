@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">home</property>
+      <property
+         name="x">318.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>home&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">176.84473</property>
+      <property
+         name="page">/home.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">tasks</property>
+      <property
+         name="x">540.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>tasks&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">332.79883</property>
+      <property
+         name="page">/tasks.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">toTask</property>
+      <property
+         name="sdm:polyPoints">R50,360.64575,176.49416,540.5,276.8025,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View3"
+      to="MethodCall11">
+      <property
+         name="fromOutcome">toCreateTask</property>
+      <property
+         name="sdm:polyPoints">R50,583.14575,332.44824,770.7097,332.09766,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall11">
+      <property
+         name="activityId">gotoFeature</property>
+      <property
+         name="x">813.35547</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>gotoFeature&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">332.44824</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+</SDM>

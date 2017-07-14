@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Tasks" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" styleClass="fa fa-arrow-left fa-lg" action="__back"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2" styleClass="fa fa-edit fa-2x" action="toCreateTask"/>
+    </amx:facet>
+    <amx:panelStretchLayout id="psl1">
+      <amx:facet name="top"/>
+      <amx:facet name="center">
+        <amx:listView showDividerCount="true" var="row" showMoreStrategy="autoScroll" id="Tab1"
+                      bufferStrategy="viewport" inlineStyle="background-color:white;"
+                      xmlns:amx="http://xmlns.oracle.com/adf/mf/amx">
+          <amx:listItem id="li3">
+            <amx:outputText value="Task 1" id="ot4"/>
+          </amx:listItem>
+          <amx:listItem id="li1">
+            <amx:outputText value="Task 2" id="ot2"/>
+          </amx:listItem>
+          <amx:listItem id="li2">
+            <amx:outputText value="Task 3" id="ot3"/>
+          </amx:listItem>
+        </amx:listView>
+      </amx:facet>
+    </amx:panelStretchLayout>
+  </amx:panelPage>
+</amx:view>

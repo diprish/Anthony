@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="Anthony" id="com.company.Anthony" appControllerFolder="ApplicationController"
+                   listener-class="of.application.LifeCycleListenerImpl">
+    <adfmf:featureReference refId="of.Home" id="fr3"/>
+    <adfmf:featureReference refId="of.CreateTask" id="fr1"/>
+    <adfmf:featureReference refId="of.Task" id="fr2"/>
+    <adfmf:featureReference refId="Springboard" id="fr4"/>
+    <adfmf:navigation>
+        <adfmf:navigationBar enabled="false"/>
+        <adfmf:springboard enabled="true" showSpringboardAtStartup="false" displayGotoSpringboardControl="false"
+                           width="250">
+            <adfmf:springboardFeatureReference refId="Springboard" id="sfr1"/>
+        </adfmf:springboard>
+    </adfmf:navigation>
+</adfmf:application>

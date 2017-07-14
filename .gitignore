@@ -1,0 +1,12 @@
+### Java ###
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Deploy Directory
+deploy/
+.data/
+classes/

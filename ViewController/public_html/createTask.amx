@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText id="ot1" value="New Task"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton actionListener="#{bindings.gotoFeature.execute}" text="Cancel"
+                               disabled="#{!bindings.gotoFeature.enabled}" id="cb4"/>
+        </amx:facet>
+        <amx:facet name="secondary">
+            <amx:commandButton id="cb1" text="Save" actionListener="#{bindings.gotoFeature.execute}"/>
+        </amx:facet>
+        <amx:panelGroupLayout id="pgl1" layout="horizontal">
+            <amx:inputText label="Sales Order" id="it1" value="#{viewScope.BarcodeBean.barcodeResult}"/>
+            <amx:commandButton id="cb3" styleClass="fa fa-barcode fa-2x"
+                               inlineStyle="margin-top:8px; margin-right:20px;"
+                               actionListener="#{viewScope.BarcodeBean.scanBarcode}"/>
+        </amx:panelGroupLayout>
+        <amx:panelFormLayout id="pfl1">
+            <amx:selectOneChoice label="Failure Type" id="soc1">
+                <amx:selectItem id="si1" label="Failure 1" value="Failure 1"/>
+                <amx:selectItem label="Failure 2" id="si2" value="Failure 2"/>
+            </amx:selectOneChoice>
+            <amx:panelLabelAndMessage label="Contact Info" id="plam2">
+                <amx:outputText value="Dummy Text" id="ot3"/>
+            </amx:panelLabelAndMessage>
+            <amx:panelLabelAndMessage label="Service Location Info" id="plam1">
+                <amx:outputText id="ot2" value="Dummy Text"/>
+            </amx:panelLabelAndMessage>
+            <amx:inputText label="Issue Description" id="it2" rows="2"/>
+            <amx:selectOneChoice label="Service Type" id="soc2">
+                <amx:selectItem id="si3" label="Service Type 1" value="Service Type 1"/>
+                <amx:selectItem label="Service Type 2" id="si4" value="Service Type 2"/>
+            </amx:selectOneChoice>
+        </amx:panelFormLayout>
+    </amx:panelPage>
+</amx:view>

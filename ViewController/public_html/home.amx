@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Antony" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandLink actionListener="#{bindings.toggleSpringboard.execute}" id="cl1">
+                <amx:image inlineStyle="width:32px;height:32px" source="/images/springboard.png" id="i1"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:facet name="secondary">
+            <amx:commandButton id="cb2"/>
+        </amx:facet>
+        <amx:panelStretchLayout id="psl1">
+            <amx:facet name="top"/>
+            <amx:facet name="center">
+                <amx:listView layout="cards" var="row" showMoreStrategy="autoScroll" bufferStrategy="viewport" id="Tab1"
+                              xmlns:amx="http://xmlns.oracle.com/adf/mf/amx">
+                    <amx:listItem styleClass="adfmf-listItem-accent4"
+                                  inlineStyle="width:46%;height:128px;text-align:center" showLinkIcon="false" id="li4"
+                                  action="toTask">
+                        <amx:outputHtml id="oh1" styleClass="fa fa-calendar-check-o fa-5x" inlineStyle="color:Black;"/>
+                        <amx:outputText value="Tasks" id="ot5"/>
+                    </amx:listItem>
+                    <amx:listItem styleClass="adfmf-listItem-accent4"
+                                  inlineStyle="width:46%;height:128px;text-align:center" showLinkIcon="false" id="li2">
+                        <amx:outputHtml id="oh2" styleClass="fa fa-history fa-5x" inlineStyle="color:Black;"/>
+                        <amx:outputText value="History" id="ot3"/>
+                    </amx:listItem>
+                    <amx:listItem styleClass="adfmf-listItem-accent4"
+                                  inlineStyle="width:46%;height:128px;text-align:center" showLinkIcon="false" id="li5">
+                        <amx:outputHtml id="oh3" styleClass="fa fa-envelope-o fa-5x"/>
+                        <amx:outputText value="Messages" id="ot6"/>
+                    </amx:listItem>
+                    <amx:listItem styleClass="adfmf-listItem-accent4"
+                                  inlineStyle="width:46%;height:128px;text-align:center" showLinkIcon="false" id="li1">
+                        <amx:outputHtml id="oh4" styleClass="fa fa-warning fa-5x"/>
+                        <amx:outputText value="Pending" id="ot2"/>
+                    </amx:listItem>
+                </amx:listView>
+            </amx:facet>
+        </amx:panelStretchLayout>
+    </amx:panelPage>
+</amx:view>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.3.15" id="DataBindings"
+             SeparateXMLFiles="false" Package="of.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/springboard.amx" usageId="of_mobile_springboardPageDef"/>
+    <page path="/home.amx" usageId="of_mobile_homePageDef"/>
+    <page path="/of.Home/homeTf.xml#homeTf@gotoFeature" usageId="of_mobile_homeTf_homeTf_gotoFeaturePageDef"/>
+    <page path="/createTask.amx" usageId="of_mobile_createTaskPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="of_mobile_springboardPageDef" path="of.mobile.pageDefs.springboardPageDef"/>
+    <page id="of_mobile_homePageDef" path="of.mobile.pageDefs.homePageDef"/>
+    <page id="of_mobile_homeTf_homeTf_gotoFeaturePageDef" path="of.Home.homeTf_homeTf_gotoFeaturePageDef"/>
+    <page id="of_mobile_createTaskPageDef" path="of.mobile.pageDefs.createTaskPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ApplicationFeatures" path="of.application.ApplicationFeatures"/>
+  </dataControlUsages>
+</Application>
