@@ -22,7 +22,7 @@
                                   inlineStyle="width:46%;height:128px;text-align:center" showLinkIcon="false" id="li4"
                                   action="toTask">
                         <amx:outputHtml id="oh1" styleClass="fa fa-calendar-check-o fa-5x" inlineStyle="color:Black;"/>
-                        <amx:outputText value="Tasks" id="ot5"/>
+                        <amx:outputText value="Service Requests" id="ot5"/>
                     </amx:listItem>
                     <amx:listItem styleClass="adfmf-listItem-accent4"
                                   inlineStyle="width:46%;height:128px;text-align:center" showLinkIcon="false" id="li2">
