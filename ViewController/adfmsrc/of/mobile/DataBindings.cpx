@@ -6,14 +6,17 @@
     <page path="/home.amx" usageId="of_mobile_homePageDef"/>
     <page path="/of.Home/homeTf.xml#homeTf@gotoFeature" usageId="of_mobile_homeTf_homeTf_gotoFeaturePageDef"/>
     <page path="/createTask.amx" usageId="of_mobile_createTaskPageDef"/>
+    <page path="/tasks.amx" usageId="of_mobile_tasksPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="of_mobile_springboardPageDef" path="of.mobile.pageDefs.springboardPageDef"/>
     <page id="of_mobile_homePageDef" path="of.mobile.pageDefs.homePageDef"/>
     <page id="of_mobile_homeTf_homeTf_gotoFeaturePageDef" path="of.Home.homeTf_homeTf_gotoFeaturePageDef"/>
     <page id="of_mobile_createTaskPageDef" path="of.mobile.pageDefs.createTaskPageDef"/>
+    <page id="of_mobile_tasksPageDef" path="of.mobile.pageDefs.tasksPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="TaskDC" path="of.mobile.TaskDC"/>
     <dc id="ApplicationFeatures" path="of.application.ApplicationFeatures"/>
   </dataControlUsages>
 </Application>

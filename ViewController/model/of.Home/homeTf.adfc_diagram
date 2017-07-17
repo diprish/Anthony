@@ -42,7 +42,7 @@
       <property
          name="fromOutcome">toTask</property>
       <property
-         name="sdm:polyPoints">R50,360.64575,176.49416,540.5,276.8025,T50</property>
+         name="sdm:polyPoints">B50,318.0,230.49414,499.5,332.44824,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -52,7 +52,7 @@
       <property
          name="fromOutcome">toCreateTask</property>
       <property
-         name="sdm:polyPoints">R50,583.14575,332.44824,770.7097,332.09766,L50</property>
+         name="sdm:polyPoints">R50,581.5,332.44824,772.35547,332.09766,L50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall11">
@@ -67,4 +67,19 @@
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
+   <View
+      id="View7">
+      <property
+         name="activityId">createTask</property>
+      <property
+         name="x">329.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>createTask&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">500.39648</property>
+      <property
+         name="page">/createTask.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
 </SDM>

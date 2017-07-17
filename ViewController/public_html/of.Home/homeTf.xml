@@ -14,6 +14,9 @@
         <fixed-outcome>gotoFeature</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="createTask">
+      <page>/createTask.amx</page>
+    </view>
     <control-flow-rule id="__1">
       <from-activity-id>home</from-activity-id>
       <control-flow-case id="__2">

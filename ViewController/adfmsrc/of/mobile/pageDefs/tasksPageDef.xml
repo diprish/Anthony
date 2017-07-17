@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.3.15" id="tasksPageDef"
+                Package="of.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="TaskDC" id="TaskDCIterator"/>
+    <accessorIterator MasterBinding="TaskDCIterator" Binds="allTasks" RangeSize="25" DataControl="TaskDC"
+                      BeanClass="of.mobile.entities.TasksEntity" id="allTasksIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="allTasksIterator" id="allTasks">
+      <nodeDefinition DefName="of.mobile.entities.TasksEntity" Name="allTasks0">
+        <AttrNames>
+          <Item Value="subject"/>
+          <Item Value="description"/>
+          <Item Value="createdOn"/>
+          <Item Value="failureType"/>
+          <Item Value="id"/>
+          <Item Value="serviceType"/>
+          <Item Value="siteContact"/>
+          <Item Value="sitePhone"/>
+          <Item Value="updated"/>
+          <Item Value="woNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -11,5 +11,7 @@
                   InstanceName="data.ApplicationFeatures.dataProvider">
       <NamedData NDName="featureId" NDValue="of.Task" NDType="java.lang.String"/>
     </methodAction>
+    <methodAction id="createTask" RequiresUpdateModel="true" Action="invokeMethod" MethodName="createTask"
+                  IsViewObjectMethod="false" DataControl="TaskDC" InstanceName="data.TaskDC.dataProvider"/>
   </bindings>
 </pageDefinition>

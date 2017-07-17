@@ -10,7 +10,7 @@
                                disabled="#{!bindings.gotoFeature.enabled}" id="cb4"/>
         </amx:facet>
         <amx:facet name="secondary">
-            <amx:commandButton id="cb1" text="Submit" actionListener="#{bindings.gotoFeature.execute}"/>
+            <amx:commandButton actionListener="#{bindings.createTask.execute}" text="Save" id="cb1"/>
         </amx:facet>
         <amx:panelGroupLayout id="pgl1" layout="horizontal">
             <amx:inputText label="Work Order" id="it1" value="#{viewScope.BarcodeBean.barcodeResult}"/>
@@ -25,6 +25,7 @@
                 <amx:selectItem id="si3" label="LED" value="LED"/>
                 <amx:selectItem id="si4" label="Unknown" value="Unknown"/>
             </amx:selectOneChoice>
+            <amx:inputText label="Subject" id="sp" rows="1" value="#{viewScope.Subject}"/>
             <amx:panelLabelAndMessage label="Contact Info" id="plam2">
                 <amx:outputText value="Dummy Text" id="ot3"/>
             </amx:panelLabelAndMessage>
@@ -38,7 +39,7 @@
                 <amx:selectItem id="st4" label="Others" value="Others"/>
             </amx:selectOneChoice>
             <amx:inputText label="Site Contact" id="sc" rows="1"/>
-            <amx:inputText label="Site Phone" id="sp" rows="1"/>
+            <amx:inputText label="Site Phone" id="it6" rows="1"/>
             <amx:inputText label="Company" id="com" rows="1"/>
             <amx:inputText label="Issue" id="it2" rows="1"/>
             <amx:inputText label="Description" id="it3" rows="2"/>
