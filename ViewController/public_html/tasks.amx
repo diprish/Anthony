@@ -6,10 +6,15 @@
             <amx:outputText value="Service Requests" id="ot1"/>
         </amx:facet>
         <amx:facet name="primary">
-            <amx:commandButton id="cb1" styleClass="fa fa-arrow-left fa-lg" action="__back"/>
+            <amx:commandButton id="cb1" styleClass="fa fa-arrow-left fa-lg"
+                               actionListener="#{bindings.gotoFeature.execute}">
+                <amx:setPropertyListener id="spl1" to="#{viewScope.fromTaskNav}" from="of.Home"/>
+            </amx:commandButton>
         </amx:facet>
         <amx:facet name="secondary">
-            <amx:commandButton id="cb2" styleClass="fa fa-edit fa-2x" action="toCreateTask"/>
+            <amx:commandButton id="cb2" styleClass="fa fa-edit fa-2x" actionListener="#{bindings.gotoFeature.execute}">
+                <amx:setPropertyListener id="spl2" to="#{viewScope.fromTaskNav}" from="of.CreateTask"/>
+            </amx:commandButton>
         </amx:facet>
         <amx:panelStretchLayout id="psl1">
             <amx:facet name="top"/>

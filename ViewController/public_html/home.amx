@@ -19,10 +19,11 @@
                 <amx:listView layout="cards" var="row" showMoreStrategy="autoScroll" bufferStrategy="viewport" id="Tab1"
                               xmlns:amx="http://xmlns.oracle.com/adf/mf/amx">
                     <amx:listItem styleClass="adfmf-listItem-accent4"
-                                  inlineStyle="width:46%;height:128px;text-align:center" showLinkIcon="false" id="li4"
-                                  action="toTask">
+                                  inlineStyle="width:46%;height:128px;text-align:center" showLinkIcon="false" id="li4">
                         <amx:outputHtml id="oh1" styleClass="fa fa-calendar-check-o fa-5x" inlineStyle="color:Black;"/>
                         <amx:outputText value="Service Requests" id="ot5"/>
+                        <amx:setPropertyListener id="spl1" to="#{viewScope.homePageNav}" from="of.Task"/>
+                        <amx:actionListener id="al1" binding="#{bindings.gotoFeature.execute}"/>
                     </amx:listItem>
                     <amx:listItem styleClass="adfmf-listItem-accent4"
                                   inlineStyle="width:46%;height:128px;text-align:center" showLinkIcon="false" id="li2">

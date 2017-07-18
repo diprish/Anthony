@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
   <task-flow-definition id="homeTf">
-    <default-activity>home</default-activity>
-    <view id="home">
-      <page>/home.amx</page>
-    </view>
-    <view id="tasks">
-      <page>/tasks.amx</page>
-    </view>
-    <method-call id="gotoFeature">
-      <method>#{bindings.gotoFeature.execute}</method>
-      <outcome>
-        <fixed-outcome>gotoFeature</fixed-outcome>
-      </outcome>
-    </method-call>
-    <view id="createTask">
-      <page>/createTask.amx</page>
-    </view>
-    <control-flow-rule id="__1">
-      <from-activity-id>home</from-activity-id>
-      <control-flow-case id="__2">
-        <from-outcome>toTask</from-outcome>
-        <to-activity-id>tasks</to-activity-id>
-      </control-flow-case>
-    </control-flow-rule>
-    <control-flow-rule id="__3">
-      <from-activity-id>tasks</from-activity-id>
-      <control-flow-case id="__4">
-        <from-outcome>toCreateTask</from-outcome>
-        <to-activity-id>gotoFeature</to-activity-id>
-      </control-flow-case>
-    </control-flow-rule>
     <page-flow-scope-behavior>
       <push-new/>
     </page-flow-scope-behavior>

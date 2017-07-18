@@ -9,27 +9,24 @@ import oracle.adfmf.framework.api.AdfmfJavaUtilities;
 
 public class TaskDC {
     private TasksEntity[] allTasks = null;
-    private TasksEntity[] editableTask = new TasksEntity[0];
-
 
     public TaskDC() {
         super();
     }
 
+    public void refresh() {
+        getAllTasks();
+    }
+
     public TasksEntity[] getAllTasks() {
-
-        if (allTasks == null) {
-
-            String restURI = AnthonyURI.GetAllTask();
-            RestCallerUtil rcu = new RestCallerUtil();
-            String jsonArrayAsString = rcu.invokeREAD(restURI);
-            TasksEntity[] tasks = JsonArrayToTasksArray.getTasksArray(jsonArrayAsString);
-            allTasks = tasks;
-        }
+        String restURI = AnthonyURI.GetAllTask();
+        RestCallerUtil rcu = new RestCallerUtil();
+        String jsonArrayAsString = rcu.invokeREAD(restURI);
+        TasksEntity[] tasks = JsonArrayToTasksArray.getTasksArray(jsonArrayAsString);
+        allTasks = tasks;
 
         return allTasks;
     }
-
 
     public void setAllTasks(TasksEntity[] allTasks) {
         this.allTasks = allTasks;
@@ -37,7 +34,6 @@ public class TaskDC {
 
     public void createTask() {
         //Save newly created tasks
-
         StringBuffer woNo = new StringBuffer();
         StringBuffer subject = new StringBuffer();
         StringBuffer payload = new StringBuffer();
@@ -57,15 +53,15 @@ public class TaskDC {
         /*
          * Save all input fields
          */
-        subject.append("subject:" + subject + System.lineSeparator());
-        woNo.append("wo_no:" + woNo + System.lineSeparator());
-
-        payload.append(subject);
-        payload.append(woNo);
+        payload.append("{");
+        payload.append("\"subject\":\"" + subject + "\",");
+        payload.append("\"wo_no\":\"" + woNo + "\",");
+        payload.deleteCharAt(payload.lastIndexOf(","));
+        payload.append("}");
 
         String restURI = AnthonyURI.GetAllTask();
         RestCallerUtil rcu = new RestCallerUtil();
-        String response = rcu.invokeUPDATE(restURI, payload.toString());
+        String response = rcu.invokeCREATE(restURI, payload.toString());
         AdfmfJavaUtilities.setELValue("#{viewScope.Subject}", response);
     }
 }

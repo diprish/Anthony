@@ -11,12 +11,12 @@
   </adfmf:feature>
   <adfmf:feature id="of.Task" name="Task">
     <adfmf:content id="of.Task.1">
-      <adfmf:amx file="tasks.amx"/>
+      <adfmf:amx file="of.Task/tasksTf.xml#tasksTf"/>
     </adfmf:content>
   </adfmf:feature>
   <adfmf:feature id="of.Home" name="Home">
     <adfmf:content id="of.Home.1">
-      <adfmf:amx file="of.Home/homeTf.xml#homeTf"/>
+      <adfmf:amx file="home.amx"/>
     </adfmf:content>
   </adfmf:feature>
   <adfmf:feature id="Springboard" name="Springboard">

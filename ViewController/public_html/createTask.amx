@@ -6,11 +6,13 @@
             <amx:outputText id="ot1" value="New Task"/>
         </amx:facet>
         <amx:facet name="primary">
-            <amx:commandButton actionListener="#{bindings.gotoFeature.execute}" text="Cancel"
-                               disabled="#{!bindings.gotoFeature.enabled}" id="cb4"/>
+            <amx:commandButton text="Cancel" disabled="#{!bindings.gotoFeature.enabled}" id="cb4"
+                               actionListener="#{bindings.gotoFeature.execute}"/>
         </amx:facet>
         <amx:facet name="secondary">
-            <amx:commandButton actionListener="#{bindings.createTask.execute}" text="Save" id="cb1"/>
+            <amx:commandButton text="Save" id="cb1" actionListener="#{bindings.gotoFeature.execute}">
+                <amx:actionListener id="al1" binding="#{bindings.createTask.execute}"/>
+            </amx:commandButton>
         </amx:facet>
         <amx:panelGroupLayout id="pgl1" layout="horizontal">
             <amx:inputText label="Work Order" id="it1" value="#{viewScope.BarcodeBean.barcodeResult}"/>
