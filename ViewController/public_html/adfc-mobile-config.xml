@@ -3,6 +3,6 @@
   <managed-bean id="__1">
     <managed-bean-name>BarcodeBean</managed-bean-name>
     <managed-bean-class>of.mobile.BarcodeBean</managed-bean-class>
-    <managed-bean-scope>view</managed-bean-scope>
+    <managed-bean-scope>application</managed-bean-scope>
   </managed-bean>
 </adfc-mobile-config>

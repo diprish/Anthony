@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
-  <adfmf:feature id="of.CreateTask" name="CreateTask">
-    <adfmf:content id="of.CreateTask.1">
-      <adfmf:amx file="createTask.amx">
+  <adfmf:feature id="of.Task" name="Task">
+    <adfmf:content id="of.Task.1">
+      <adfmf:amx file="of.Task/tasksTf.xml#tasksTf">
         <adfmf:includes>
-          <adfmf:include type="JavaScript" file="scanner.js" id="i1"/>
+          <adfmf:include type="JavaScript" file="resources/js/scanner.js" id="i1"/>
         </adfmf:includes>
       </adfmf:amx>
     </adfmf:content>
   </adfmf:feature>
-  <adfmf:feature id="of.Task" name="Task">
-    <adfmf:content id="of.Task.1">
-      <adfmf:amx file="of.Task/tasksTf.xml#tasksTf"/>
-    </adfmf:content>
-  </adfmf:feature>
   <adfmf:feature id="of.Home" name="Home">
     <adfmf:content id="of.Home.1">
-      <adfmf:amx file="home.amx"/>
+      <adfmf:amx file="of.Home/home.amx"/>
     </adfmf:content>
   </adfmf:feature>
-  <adfmf:feature id="Springboard" name="Springboard">
+  <adfmf:feature id="of.Springboard" name="Springboard">
     <adfmf:content id="of.Springboard.1">
       <adfmf:amx file="springboard.amx"/>
       <adfmf:amx file=""/>

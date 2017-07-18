@@ -1,20 +1,46 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
   <task-flow-definition id="tasksTf">
-    <default-activity>refresh</default-activity>
+    <default-activity>tasks</default-activity>
+    <managed-bean id="__1">
+      <managed-bean-name>BarcodeBean</managed-bean-name>
+      <managed-bean-class>of.mobile.BarcodeBean</managed-bean-class>
+      <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
     <view id="tasks">
-      <page>/tasks.amx</page>
+      <page>/of.Task/tasks.amx</page>
     </view>
-    <method-call id="refresh">
-      <method>#{bindings.refresh.execute}</method>
+    <view id="createTask">
+      <page>/of.Task/createTask.amx</page>
+    </view>
+    <method-call id="createAndSaveTask">
+      <method>#{bindings.createAndSaveTask.execute}</method>
       <outcome>
-        <fixed-outcome>refresh</fixed-outcome>
+        <fixed-outcome>createAndSaveTask</fixed-outcome>
       </outcome>
     </method-call>
-    <control-flow-rule id="__1">
-      <from-activity-id>refresh</from-activity-id>
-      <control-flow-case id="__2">
-        <from-outcome>refresh</from-outcome>
+    <control-flow-rule id="__4">
+      <from-activity-id>tasks</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>toCreate</from-outcome>
+        <to-activity-id>createTask</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>createTask</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>save</from-outcome>
+        <to-activity-id>createAndSaveTask</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>tasks</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>createAndSaveTask</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>createAndSaveTask</from-outcome>
         <to-activity-id>tasks</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

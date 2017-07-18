@@ -5,29 +5,29 @@
     }
     
     function onSuccess(result) {
-        adf.mf.api.setValue( { "name": "#{viewScope.BarcodeBean.barcodeError}", 
+        adf.mf.api.setValue( { "name": "#{applicationScope.BarcodeBean.barcodeError}", 
                                "value": ""}, 
                                function() {}, 
                                function() {});
 
-        adf.mf.api.setValue( { "name": "#{viewScope.BarcodeBean.barcodeResult}", 
+        adf.mf.api.setValue( { "name": "#{applicationScope.BarcodeBean.barcodeResult}", 
                                "value": result.text}, 
                                function() {}, 
                                function() {});
 
-        adf.mf.api.setValue( { "name": "#{viewScope.BarcodeBean.barcodeFormat}", 
+        adf.mf.api.setValue( { "name": "#{applicationScope.BarcodeBean.barcodeFormat}", 
                                "value": result.format}, 
                                function() {}, 
                                function() {});
 
-        adf.mf.api.setValue( { "name": "#{viewScope.BarcodeBean.barcodeCancelled}", 
+        adf.mf.api.setValue( { "name": "#{applicationScope.BarcodeBean.barcodeCancelled}", 
                                "value": result.cancelled == 1 ? "Yes" : "No"}, 
                                function() {}, 
                                function() {});
     }
     
     function onError(error) {
-        adf.mf.api.setValue( { "name": "#{viewScope.BarcodeBean.barcodeError}", 
+        adf.mf.api.setValue( { "name": "#{applicationScope.BarcodeBean.barcodeError}", 
                                "value": "ERROR: " + error.text}, 
                                function() {}, 
                                function() {});

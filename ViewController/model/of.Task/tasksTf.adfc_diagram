@@ -7,41 +7,84 @@
       <property
          name="activityId">tasks</property>
       <property
-         name="x">376.5</property>
-      <property
-         name="start">false</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>tasks&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">229.5918</property>
-      <property
-         name="page">/tasks.amx</property>
-      <property
-         name="exceptionHandler">false</property>
-   </View>
-   <MethodCall
-      id="MethodCall3">
-      <property
-         name="activityId">refresh</property>
-      <property
-         name="x">200.5</property>
+         name="x">424.5</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>refresh&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>tasks&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">220.79883</property>
+         name="y">217.08594</property>
+      <property
+         name="page">/of.Task/tasks.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">createTask</property>
+      <property
+         name="x">716.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>createTask&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">221.09766</property>
+      <property
+         name="page">/of.Task/createTask.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">toCreate</property>
+      <property
+         name="sdm:polyPoints">R46,465.5085,213.23535,675.5,213.74707,L42</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View3"
+      to="MethodCall8">
+      <property
+         name="fromOutcome">save</property>
+      <property
+         name="sdm:polyPoints">L58,675.5,227.74707,581.0293,302.09766,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall8">
+      <property
+         name="activityId">createAndSaveTask</property>
+      <property
+         name="x">581.0293</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>createAndSaveTask&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">356.44824</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase4"
-      from="MethodCall3"
+      id="ControlFlowCase9"
+      from="MethodCall8"
       to="View2">
       <property
-         name="fromOutcome">refresh</property>
+         name="fromOutcome">createAndSaveTask</property>
       <property
-         name="sdm:polyPoints">R50,241.5,220.44824,335.5,229.24121,L50</property>
+         name="sdm:polyPoints">L50,540.0293,356.09766,424.5,270.73535,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase10"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">cancel</property>
+      <property
+         name="sdm:polyPoints">L50,675.49146,220.74707,465.5,220.23535,R54</property>
    </ControlFlowCase>
 </SDM>

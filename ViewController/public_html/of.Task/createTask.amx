@@ -6,19 +6,16 @@
             <amx:outputText id="ot1" value="New Task"/>
         </amx:facet>
         <amx:facet name="primary">
-            <amx:commandButton text="Cancel" disabled="#{!bindings.gotoFeature.enabled}" id="cb4"
-                               actionListener="#{bindings.gotoFeature.execute}"/>
+            <amx:commandButton text="Cancel" id="cb4" action="cancel"/>
         </amx:facet>
         <amx:facet name="secondary">
-            <amx:commandButton text="Save" id="cb1" actionListener="#{bindings.gotoFeature.execute}">
-                <amx:actionListener id="al1" binding="#{bindings.createTask.execute}"/>
-            </amx:commandButton>
+            <amx:commandButton text="Save" id="cb1" action="save"/>
         </amx:facet>
         <amx:panelGroupLayout id="pgl1" layout="horizontal">
-            <amx:inputText label="Work Order" id="it1" value="#{viewScope.BarcodeBean.barcodeResult}"/>
+            <amx:inputText label="Work Order" id="it1" value="#{applicationScope.BarcodeBean.barcodeResult}"/>
             <amx:commandButton id="cb3" styleClass="fa fa-barcode fa-2x"
                                inlineStyle="margin-top:8px; margin-right:20px;"
-                               actionListener="#{viewScope.BarcodeBean.scanBarcode}"/>
+                               actionListener="#{applicationScope.BarcodeBean.scanBarcode}"/>
         </amx:panelGroupLayout>
         <amx:panelFormLayout id="pfl1">
             <amx:selectOneChoice label="Failure Type" id="soc1">
@@ -27,7 +24,7 @@
                 <amx:selectItem id="si3" label="LED" value="LED"/>
                 <amx:selectItem id="si4" label="Unknown" value="Unknown"/>
             </amx:selectOneChoice>
-            <amx:inputText label="Subject" id="sp" rows="1" value="#{viewScope.Subject}"/>
+            <amx:inputText label="Subject" id="sp" rows="1" value="#{pageFlowScope.subject}"/>
             <amx:panelLabelAndMessage label="Contact Info" id="plam2">
                 <amx:outputText value="Dummy Text" id="ot3"/>
             </amx:panelLabelAndMessage>

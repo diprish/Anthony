@@ -3,17 +3,19 @@
              SeparateXMLFiles="false" Package="of.mobile" ClientType="Generic">
   <pageMap>
     <page path="/springboard.amx" usageId="of_mobile_springboardPageDef"/>
-    <page path="/home.amx" usageId="of_mobile_homePageDef"/>
-    <page path="/createTask.amx" usageId="of_mobile_createTaskPageDef"/>
-    <page path="/tasks.amx" usageId="of_mobile_tasksPageDef"/>
-    <page path="/of.Task/tasksTf.xml#tasksTf@refresh" usageId="of_mobile_tasksTf_tasksTf_refreshPageDef"/>
+    <page path="/of.Home/home.amx" usageId="of_mobile_homePageDef"/>
+    <page path="/of.Task/createTask.amx" usageId="of_mobile_createTaskPageDef"/>
+    <page path="/of.Task/tasks.amx" usageId="of_mobile_tasksPageDef"/>
+    <page path="/of.Task/tasksTf.xml#tasksTf@createAndSaveTask"
+          usageId="of_mobile_tasksTf_tasksTf_createAndSaveTaskPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="of_mobile_springboardPageDef" path="of.mobile.pageDefs.springboardPageDef"/>
     <page id="of_mobile_homePageDef" path="of.mobile.pageDefs.homePageDef"/>
     <page id="of_mobile_createTaskPageDef" path="of.mobile.pageDefs.createTaskPageDef"/>
     <page id="of_mobile_tasksPageDef" path="of.mobile.pageDefs.tasksPageDef"/>
-    <page id="of_mobile_tasksTf_tasksTf_refreshPageDef" path="of.Task.tasksTf_tasksTf_refreshPageDef"/>
+    <page id="of_mobile_tasksTf_tasksTf_createAndSaveTaskPageDef"
+          path="of.Task.tasksTf_tasksTf_createAndSaveTaskPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="TaskDC" path="of.mobile.TaskDC"/>
