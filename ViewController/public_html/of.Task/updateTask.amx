@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Update Task" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" text="Cancel" action="cancel"/>
+        </amx:facet>
+        <amx:facet name="secondary">
+            <amx:commandButton id="cb2" action="save" text="Save"/>
+        </amx:facet>
+        <amx:panelGroupLayout id="pgl1" layout="horizontal">
+            <amx:inputText label="Work Order" id="it1" value="#{applicationScope.BarcodeBean.barcodeResult}"/>
+            <amx:commandButton id="cb3" styleClass="fa fa-barcode fa-2x"
+                               inlineStyle="margin-top:8px; margin-right:20px;"
+                               actionListener="#{applicationScope.BarcodeBean.scanBarcode}"/>
+        </amx:panelGroupLayout>
+        <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start">
+            <amx:selectOneChoice label="Failure Type" id="soc1" value="#{pageFlowScope.failureType}">
+                <amx:selectItem id="si1" label="Frame" value="Frame"/>
+                <amx:selectItem id="si2" label="Door" value="Door"/>
+                <amx:selectItem id="si3" label="LED" value="LED"/>
+                <amx:selectItem id="si4" label="Unknown" value="Unknown"/>
+            </amx:selectOneChoice>
+            <amx:inputText label="Subject" id="sp" rows="1" value="#{pageFlowScope.subject}"/>
+            <amx:panelLabelAndMessage label="Contact Info" id="plam2">
+                <amx:outputText value="Contact" id="ot3"/>
+            </amx:panelLabelAndMessage>
+            <amx:panelLabelAndMessage label="Service Location Info" id="plam1">
+                <amx:outputText id="ot2" value="Location"/>
+            </amx:panelLabelAndMessage>
+            <amx:selectOneChoice label="Service Type" id="soc2" value="#{pageFlowScope.serviceType}">
+                <amx:selectItem id="st1" label="On Site Field Service" value="On Site Field Service"/>
+                <amx:selectItem id="st2" label="Parts Replacement Only" value="Parts Replacement Only"/>
+                <amx:selectItem id="st3" label="Phone Technical Support" value="Phone Technical Support"/>
+                <amx:selectItem id="st4" label="Others" value="Others"/>
+            </amx:selectOneChoice>
+            <amx:inputText label="Site Contact" id="sc" rows="1"/>
+            <amx:inputText label="Site Phone" id="it6" rows="1"/>
+            <amx:inputText label="Company" id="com" rows="1"/>
+            <amx:inputText label="Issue" id="it2" rows="1"/>
+            <amx:inputText label="Description" id="it3" rows="2" value="#{pageFlowScope.description}"/>
+            <amx:inputText label="Findings" id="it4" rows="2"/>
+            <amx:inputText label="Work Performed" id="it5" rows="2"/>
+        </amx:panelFormLayout>
+    </amx:panelPage>
+</amx:view>

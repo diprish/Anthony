@@ -21,7 +21,7 @@
                               initialScrollRowKeys="#{bindings.allTasks.collectionModel.selectedRow}"
                               selectionListener="#{bindings.allTasks.collectionModel.makeCurrent}"
                               showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1">
-                    <amx:listItem id="li4">
+                    <amx:listItem id="li4" action="update">
                         <amx:tableLayout width="100%" id="tl1">
                             <amx:rowLayout id="rl1">
                                 <amx:cellFormat width="10px" rowSpan="2" id="cf1"/>
@@ -38,6 +38,7 @@
                                 </amx:cellFormat>
                             </amx:rowLayout>
                         </amx:tableLayout>
+                        <amx:setPropertyListener id="spl1" from="#{row.id}" to="#{pageFlowScope.taskId}"/>
                     </amx:listItem>
                 </amx:listView>
             </amx:facet>

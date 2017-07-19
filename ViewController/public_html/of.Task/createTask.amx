@@ -6,10 +6,10 @@
             <amx:outputText id="ot1" value="New Task"/>
         </amx:facet>
         <amx:facet name="primary">
-            <amx:commandButton text="Cancel" id="cb4" action="cancel"/>
+            <amx:commandButton text="Cancel" id="cb4" action="backToTask"/>
         </amx:facet>
         <amx:facet name="secondary">
-            <amx:commandButton text="Save" id="cb1" action="save"/>
+            <amx:commandButton text="Save" id="cb2" action="create"/>
         </amx:facet>
         <amx:panelGroupLayout id="pgl1" layout="horizontal">
             <amx:inputText label="Work Order" id="it1" value="#{applicationScope.BarcodeBean.barcodeResult}"/>
@@ -17,8 +17,8 @@
                                inlineStyle="margin-top:8px; margin-right:20px;"
                                actionListener="#{applicationScope.BarcodeBean.scanBarcode}"/>
         </amx:panelGroupLayout>
-        <amx:panelFormLayout id="pfl1">
-            <amx:selectOneChoice label="Failure Type" id="soc1">
+        <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start">
+            <amx:selectOneChoice label="Failure Type" id="soc1" value="#{pageFlowScope.failureType}">
                 <amx:selectItem id="si1" label="Frame" value="Frame"/>
                 <amx:selectItem id="si2" label="Door" value="Door"/>
                 <amx:selectItem id="si3" label="LED" value="LED"/>
@@ -26,12 +26,12 @@
             </amx:selectOneChoice>
             <amx:inputText label="Subject" id="sp" rows="1" value="#{pageFlowScope.subject}"/>
             <amx:panelLabelAndMessage label="Contact Info" id="plam2">
-                <amx:outputText value="Dummy Text" id="ot3"/>
+                <amx:outputText value="Contact" id="ot3"/>
             </amx:panelLabelAndMessage>
             <amx:panelLabelAndMessage label="Service Location Info" id="plam1">
-                <amx:outputText id="ot2" value="Dummy Text"/>
+                <amx:outputText id="ot2" value="Location"/>
             </amx:panelLabelAndMessage>
-            <amx:selectOneChoice label="Service Type" id="soc2">
+            <amx:selectOneChoice label="Service Type" id="soc2" value="#{pageFlowScope.serviceType}">
                 <amx:selectItem id="st1" label="On Site Field Service" value="On Site Field Service"/>
                 <amx:selectItem id="st2" label="Parts Replacement Only" value="Parts Replacement Only"/>
                 <amx:selectItem id="st3" label="Phone Technical Support" value="Phone Technical Support"/>
@@ -41,7 +41,7 @@
             <amx:inputText label="Site Phone" id="it6" rows="1"/>
             <amx:inputText label="Company" id="com" rows="1"/>
             <amx:inputText label="Issue" id="it2" rows="1"/>
-            <amx:inputText label="Description" id="it3" rows="2"/>
+            <amx:inputText label="Description" id="it3" rows="2" value="#{pageFlowScope.description}"/>
             <amx:inputText label="Findings" id="it4" rows="2"/>
             <amx:inputText label="Work Performed" id="it5" rows="2"/>
         </amx:panelFormLayout>

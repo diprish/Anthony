@@ -51,7 +51,8 @@ public class RestCallerUtil {
         restServiceAdapter.setConnectionName("restapi");
         restServiceAdapter.setRequestMethod(httpMethod);
         restServiceAdapter.addRequestProperty("Content-Type", "application/json");
-        if (httpMethod.equals(RestServiceAdapter.REQUEST_TYPE_PUT))
+        if (httpMethod.equals(RestServiceAdapter.REQUEST_TYPE_PUT) ||
+            httpMethod.equals(RestServiceAdapter.REQUEST_TYPE_POST))
             restServiceAdapter.addRequestProperty("Accept", "text/html");
         else
             restServiceAdapter.addRequestProperty("Accept", "application/json; charset=UTF-8");

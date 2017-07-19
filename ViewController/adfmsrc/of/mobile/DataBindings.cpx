@@ -8,6 +8,9 @@
     <page path="/of.Task/tasks.amx" usageId="of_mobile_tasksPageDef"/>
     <page path="/of.Task/tasksTf.xml#tasksTf@createAndSaveTask"
           usageId="of_mobile_tasksTf_tasksTf_createAndSaveTaskPageDef"/>
+    <page path="/of.Task/tasksTf.xml#tasksTf@getTask" usageId="of_mobile_tasksTf_tasksTf_getTaskPageDef"/>
+    <page path="/of.Task/tasksTf.xml#tasksTf@saveTask" usageId="of_mobile_tasksTf_tasksTf_saveTaskPageDef"/>
+    <page path="/of.Task/tasksTf.xml#tasksTf@clearValues" usageId="of_mobile_tasksTf_tasksTf_clearValuesPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="of_mobile_springboardPageDef" path="of.mobile.pageDefs.springboardPageDef"/>
@@ -16,6 +19,9 @@
     <page id="of_mobile_tasksPageDef" path="of.mobile.pageDefs.tasksPageDef"/>
     <page id="of_mobile_tasksTf_tasksTf_createAndSaveTaskPageDef"
           path="of.Task.tasksTf_tasksTf_createAndSaveTaskPageDef"/>
+    <page id="of_mobile_tasksTf_tasksTf_getTaskPageDef" path="of.Task.tasksTf_tasksTf_getTaskPageDef"/>
+    <page id="of_mobile_tasksTf_tasksTf_saveTaskPageDef" path="of.Task.tasksTf_tasksTf_saveTaskPageDef"/>
+    <page id="of_mobile_tasksTf_tasksTf_clearValuesPageDef" path="of.Task.tasksTf_tasksTf_clearValuesPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="TaskDC" path="of.mobile.TaskDC"/>
