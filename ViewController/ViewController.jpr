@@ -231,6 +231,10 @@
             <value n="id" v="ADF Web Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Support"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <hash n="jdkReference">
          <value n="id" v="MAF JDK 1.8 Compact 2 Profile"/>
@@ -252,6 +256,10 @@
          </hash>
          <hash>
             <value n="id" v="ADF Web Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Support"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

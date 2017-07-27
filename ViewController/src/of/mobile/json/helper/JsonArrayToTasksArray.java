@@ -53,22 +53,22 @@ public class JsonArrayToTasksArray {
                 try {
                     entity.setServiceType(obj.getString("service_type"));
                 } catch (JSONException jex) {
-                    Trace.log("service_type field value not found", Level.INFO, JsonArrayToTasksArray.class, "getTasksArray",
-                              "Parsing of REST response failed: " + jex.getLocalizedMessage());
+                    Trace.log("service_type field value not found", Level.INFO, JsonArrayToTasksArray.class,
+                              "getTasksArray", "Parsing of REST response failed: " + jex.getLocalizedMessage());
                 }
 
                 try {
                     entity.setSiteContact(obj.getString("site_contact"));
                 } catch (JSONException jex) {
-                    Trace.log("site_contact field value not found", Level.INFO, JsonArrayToTasksArray.class, "getTasksArray",
-                              "Parsing of REST response failed: " + jex.getLocalizedMessage());
+                    Trace.log("site_contact field value not found", Level.INFO, JsonArrayToTasksArray.class,
+                              "getTasksArray", "Parsing of REST response failed: " + jex.getLocalizedMessage());
                 }
 
                 try {
                     entity.setSitePhone(obj.getString("site_phone"));
                 } catch (JSONException jex) {
-                    Trace.log("site_phone field value not found", Level.INFO, JsonArrayToTasksArray.class, "getTasksArray",
-                              "Parsing of REST response failed: " + jex.getLocalizedMessage());
+                    Trace.log("site_phone field value not found", Level.INFO, JsonArrayToTasksArray.class,
+                              "getTasksArray", "Parsing of REST response failed: " + jex.getLocalizedMessage());
                 }
 
                 try {
@@ -91,6 +91,28 @@ public class JsonArrayToTasksArray {
                     Trace.log("wo_no field value not found", Level.INFO, JsonArrayToTasksArray.class, "getTasksArray",
                               "Parsing of REST response failed: " + jex.getLocalizedMessage());
                 }
+
+                try {
+                    entity.setCompany(obj.getString("company"));
+                } catch (JSONException jex) {
+                    Trace.log("company field value not found", Level.INFO, JsonArrayToTasksArray.class, "getTasksArray",
+                              "Parsing of REST response failed: " + jex.getLocalizedMessage());
+                }
+
+                try {
+                    entity.setFindings(obj.getString("findings"));
+                } catch (JSONException jex) {
+                    Trace.log("findings field value not found", Level.INFO, JsonArrayToTasksArray.class,
+                              "getTasksArray", "Parsing of REST response failed: " + jex.getLocalizedMessage());
+                }
+
+                try {
+                    entity.setWorkPerformed(obj.getString("work_performed"));
+                } catch (JSONException jex) {
+                    Trace.log("work_performed field value not found", Level.INFO, JsonArrayToTasksArray.class,
+                              "getTasksArray", "Parsing of REST response failed: " + jex.getLocalizedMessage());
+                }
+
                 taskList.add(entity);
             }
         } catch (Exception e) {

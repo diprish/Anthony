@@ -14,6 +14,10 @@ public class TasksEntity {
     private String subject;
     private String updated;
     private String woNo;
+    private String createdBy;
+    private String company;
+    private String findings;
+    private String workPerformed;
     private PropertyChangeSupport _propertyChangeSupport = new PropertyChangeSupport(this);
 
 
@@ -21,6 +25,45 @@ public class TasksEntity {
         super();
     }
 
+    public void setCreatedBy(String createdBy) {
+        String oldCreatedBy = this.createdBy;
+        this.createdBy = createdBy;
+        _propertyChangeSupport.firePropertyChange("createdBy", oldCreatedBy, createdBy);
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCompany(String company) {
+        String oldCompany = this.company;
+        this.company = company;
+        _propertyChangeSupport.firePropertyChange("company", oldCompany, company);
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setFindings(String findings) {
+        String oldFindings = this.findings;
+        this.findings = findings;
+        _propertyChangeSupport.firePropertyChange("findings", oldFindings, findings);
+    }
+
+    public String getFindings() {
+        return findings;
+    }
+
+    public void setWorkPerformed(String workPerformed) {
+        String oldWorkPerformed = this.workPerformed;
+        this.workPerformed = workPerformed;
+        _propertyChangeSupport.firePropertyChange("workPerformed", oldWorkPerformed, workPerformed);
+    }
+
+    public String getWorkPerformed() {
+        return workPerformed;
+    }
 
     public void setCreatedOn(String createdOn) {
         String oldCreatedOn = this.createdOn;

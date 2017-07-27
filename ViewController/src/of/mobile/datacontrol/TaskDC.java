@@ -15,6 +15,7 @@ import oracle.adfmf.util.logging.Trace;
 public class TaskDC {
     private TasksEntity[] allTasks = null;
     private PropertyChangeSupport _propertyChangeSupport = new PropertyChangeSupport(this);
+    private String user = "Arup";
 
     public TaskDC() {
         super();
@@ -38,6 +39,9 @@ public class TaskDC {
                 AdfmfJavaUtilities.setELValue("#{pageFlowScope.serviceType}", task.getServiceType());
                 AdfmfJavaUtilities.setELValue("#{pageFlowScope.description}", task.getDescription());
                 AdfmfJavaUtilities.setELValue("#{pageFlowScope.failureType}", task.getFailureType());
+                AdfmfJavaUtilities.setELValue("#{pageFlowScope.company}", task.getCompany());
+                AdfmfJavaUtilities.setELValue("#{pageFlowScope.findings}", task.getFindings());
+                AdfmfJavaUtilities.setELValue("#{pageFlowScope.workPerformed}", task.getWorkPerformed());
                 break;
             }
         }
@@ -49,41 +53,44 @@ public class TaskDC {
         AdfmfJavaUtilities.setELValue("#{pageFlowScope.serviceType}", null);
         AdfmfJavaUtilities.setELValue("#{pageFlowScope.description}", null);
         AdfmfJavaUtilities.setELValue("#{pageFlowScope.failureType}", null);
+        AdfmfJavaUtilities.setELValue("#{pageFlowScope.company}", null);
+        AdfmfJavaUtilities.setELValue("#{pageFlowScope.findings}", null);
+        AdfmfJavaUtilities.setELValue("#{pageFlowScope.workPerformed}", null);
     }
 
     public void saveTask() {
-        StringBuffer taskId = new StringBuffer();
-        StringBuffer woNo = new StringBuffer();
-        StringBuffer subject = new StringBuffer();
-        StringBuffer description = new StringBuffer();
-        //        StringBuffer serviceType = new StringBuffer();
-        //        StringBuffer failureType = new StringBuffer();
         StringBuffer payload = new StringBuffer();
-
         payload.append("{");
-
+        //Task ID
         try {
+            StringBuffer taskId = new StringBuffer();
             taskId.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.taskId}").toString());
             payload.append("\"id\":\"" + taskId + "\",");
         } catch (Exception ex) {
             return;
         }
 
+        //WO No
         try {
+            StringBuffer woNo = new StringBuffer();
             woNo.append(AdfmfJavaUtilities.getELValue("#{applicationScope.BarcodeBean.barcodeResult}").toString());
             payload.append("\"wo_no\":\"" + woNo + "\",");
         } catch (Exception ex) {
             return;
         }
 
+        //Subject
         try {
+            StringBuffer subject = new StringBuffer();
             subject.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.subject}"));
             payload.append("\"subject\":\"" + subject + "\",");
         } catch (Exception ex) {
             return;
         }
 
+        //Description
         try {
+            StringBuffer description = new StringBuffer();
             description.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.description}"));
             payload.append("\"description\":\"" + description + "\",");
         } catch (Exception ex) {
@@ -91,6 +98,56 @@ public class TaskDC {
                       ex.getLocalizedMessage());
         }
 
+        //Service Type
+        try {
+            StringBuffer serviceType = new StringBuffer();
+            serviceType.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.serviceType}"));
+            payload.append("\"service_type\":\"" + serviceType + "\",");
+        } catch (Exception ex) {
+            Trace.log("service_type field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
+                      ex.getLocalizedMessage());
+        }
+
+        //Failure Type
+        try {
+            StringBuffer failureType = new StringBuffer();
+            failureType.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.failureType}"));
+            payload.append("\"failure_type\":\"" + failureType + "\",");
+        } catch (Exception ex) {
+            Trace.log("failure_type field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
+                      ex.getLocalizedMessage());
+        }
+
+        //Company
+        try {
+            StringBuffer company = new StringBuffer();
+            company.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.company}"));
+            payload.append("\"company\":\"" + company + "\",");
+        } catch (Exception ex) {
+            Trace.log("company field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
+                      ex.getLocalizedMessage());
+        }
+
+        //Findings
+        try {
+            StringBuffer findings = new StringBuffer();
+            findings.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.findings}"));
+            payload.append("\"findings\":\"" + findings + "\",");
+        } catch (Exception ex) {
+            Trace.log("findings field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
+                      ex.getLocalizedMessage());
+        }
+
+        //Work Performed
+        try {
+            StringBuffer workPerformed = new StringBuffer();
+            workPerformed.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.workPerformed}"));
+            payload.append("\"work_performed\":\"" + workPerformed + "\",");
+        } catch (Exception ex) {
+            Trace.log("work_performed field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
+                      ex.getLocalizedMessage());
+        }
+        payload.append("\"updated_by\":\"" + user + "\",");
         /*
          * Save all input fields
          */
@@ -116,34 +173,89 @@ public class TaskDC {
 
     public void createAndSaveTask() {
         //Save newly created tasks
-        StringBuffer woNo = new StringBuffer();
-        StringBuffer subject = new StringBuffer();
         StringBuffer payload = new StringBuffer();
-        StringBuffer description = new StringBuffer();
 
         payload.append("{");
-
+        //WO No
         try {
+            StringBuffer woNo = new StringBuffer();
             woNo.append(AdfmfJavaUtilities.getELValue("#{applicationScope.BarcodeBean.barcodeResult}").toString());
             payload.append("\"wo_no\":\"" + woNo + "\",");
         } catch (Exception ex) {
             return;
         }
 
+        //Subject
         try {
+            StringBuffer subject = new StringBuffer();
             subject.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.subject}"));
             payload.append("\"subject\":\"" + subject + "\",");
         } catch (Exception ex) {
             return;
         }
 
+        //Description
+
         try {
+            StringBuffer description = new StringBuffer();
             description.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.description}"));
             payload.append("\"description\":\"" + description + "\",");
         } catch (Exception ex) {
             Trace.log("description field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
                       ex.getLocalizedMessage());
         }
+
+        //Failure Type
+        try {
+            StringBuffer failureType = new StringBuffer();
+            failureType.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.failureType}"));
+            payload.append("\"failure_type\":\"" + failureType + "\",");
+        } catch (Exception ex) {
+            Trace.log("failureType field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
+                      ex.getLocalizedMessage());
+        }
+
+        //Service Type
+        try {
+            StringBuffer serviceType = new StringBuffer();
+            serviceType.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.serviceType}"));
+            payload.append("\"service_type\":\"" + serviceType + "\",");
+        } catch (Exception ex) {
+            Trace.log("serviceType field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
+                      ex.getLocalizedMessage());
+        }
+
+        //Company
+        try {
+            StringBuffer company = new StringBuffer();
+            company.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.company}"));
+            payload.append("\"company\":\"" + company + "\",");
+        } catch (Exception ex) {
+            Trace.log("company field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
+                      ex.getLocalizedMessage());
+        }
+
+        //Findings
+        try {
+            StringBuffer findings = new StringBuffer();
+            findings.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.findings}"));
+            payload.append("\"findings\":\"" + findings + "\",");
+        } catch (Exception ex) {
+            Trace.log("findings field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
+                      ex.getLocalizedMessage());
+        }
+
+        //Work Performed
+        try {
+            StringBuffer workPerformed = new StringBuffer();
+            workPerformed.append(AdfmfJavaUtilities.getELValue("#{pageFlowScope.workPerformed}"));
+            payload.append("\"work_performed\":\"" + workPerformed + "\",");
+        } catch (Exception ex) {
+            Trace.log("work_performed field value not found", Level.INFO, TaskDC.class, "createAndSaveTask",
+                      ex.getLocalizedMessage());
+        }
+
+        payload.append("\"created_by\":\"" + user + "\",");
 
         /*
          * Save all input fields

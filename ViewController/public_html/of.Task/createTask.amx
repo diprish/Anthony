@@ -39,11 +39,10 @@
             </amx:selectOneChoice>
             <amx:inputText label="Site Contact" id="sc" rows="1"/>
             <amx:inputText label="Site Phone" id="it6" rows="1"/>
-            <amx:inputText label="Company" id="com" rows="1"/>
-            <amx:inputText label="Issue" id="it2" rows="1"/>
+            <amx:inputText label="Company" id="com" rows="1" value="#{pageFlowScope.company}"/>
             <amx:inputText label="Description" id="it3" rows="2" value="#{pageFlowScope.description}"/>
-            <amx:inputText label="Findings" id="it4" rows="2"/>
-            <amx:inputText label="Work Performed" id="it5" rows="2"/>
+            <amx:inputText label="Findings" id="it4" rows="2" value="#{pageFlowScope.findings}"/>
+            <amx:inputText label="Work Performed" id="it5" rows="2" value="#{pageFlowScope.workPerformed}"/>
         </amx:panelFormLayout>
     </amx:panelPage>
 </amx:view>
